@@ -49,42 +49,31 @@
 
         <!-- Content Start -->
         <div class="content">
-            <!-- Navbar Start -->
-           
-            <!-- Navbar End -->
 
 
             <div class="bg-light rounded h-100 p-4">
-    <h6 class="mb-4">User Management</h6>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
+            <h6 class="mb-4">FollowUps Management</h6>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tanggal Tindak Lanjut</th>
+                <th>Deskripsi</th>
+                <th>Complaint ID</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($followUps as $followUp): ?>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Aksi</th> <!-- Tambah kolom untuk tombol aksi -->
+                <td><?= $followUp['FollowUpID']; ?></td>
+                    <td><?= $followUp['TanggalTindakLanjut']; ?></td>
+                    <td><?= $followUp['DeskripsiTindakLanjut']; ?></td>
+                    <td><?= $followUp['ComplaintID']; ?></td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td><?= $user['UserID']; ?></td>
-                        <td><?= $user['Nama']; ?></td>
-                        <td><?= $user['AlamatEmail']; ?></td>
-                        <td><?= $user['StatusAktif'] ? 'Aktif' : 'Tidak Aktif'; ?></td>
-                        <td>
-                            <!-- Tombol Edit -->
-                            <a href="editUser/<?= $user['UserID']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                            <!-- Tombol Delete -->
-                            <a href="deleteUser/<?= $user['UserID']; ?>" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
             <!-- Table End --
 

@@ -49,42 +49,45 @@
 
         <!-- Content Start -->
         <div class="content">
-            <!-- Navbar Start -->
-           
-            <!-- Navbar End -->
 
 
             <div class="bg-light rounded h-100 p-4">
-    <h6 class="mb-4">User Management</h6>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
+            <h6 class="mb-4">Complaint Management</h6>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Deskripsi</th>
+                <th scope="col">Tanggal</th>
+                <th scope="col">Status</th>
+                <th scope="col">Prioritas</th>
+                <th scope="col">Aksi</th> <!-- Tambah kolom untuk tombol aksi -->
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($complaints as $complaint) : ?>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Aksi</th> <!-- Tambah kolom untuk tombol aksi -->
+                    <td><?= $complaint['ComplaintID']; ?></td>
+                    <td><?= $complaint['JudulPengaduan']; ?></td>
+                    <td><?= $complaint['DeskripsiPengaduan']; ?></td>
+                    <td><?= $complaint['TanggalPengaduan']; ?></td>
+                    <td><?= $complaint['StatusPengaduan']; ?></td>
+                    <td><?= $complaint['PrioritasPengaduan']; ?></td>
+                    <td>
+    <!-- Tombol Edit -->
+    <a href="/edit/<?= $complaint['ComplaintID']; ?>" class="btn btn-sm btn-primary d-inline-block">Edit</a>
+    <!-- Tombol Delete -->
+    <a href="/delete/<?= $complaint['ComplaintID']; ?>" class="btn btn-sm btn-danger d-inline-block">Delete</a>
+    <a href="<?= base_url("createFollowUps/{$complaint['ComplaintID']}"); ?>" class="btn btn-sm btn-info d-inline-block">Tindak Lanjut</a>
+</td>
+
+
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td><?= $user['UserID']; ?></td>
-                        <td><?= $user['Nama']; ?></td>
-                        <td><?= $user['AlamatEmail']; ?></td>
-                        <td><?= $user['StatusAktif'] ? 'Aktif' : 'Tidak Aktif'; ?></td>
-                        <td>
-                            <!-- Tombol Edit -->
-                            <a href="editUser/<?= $user['UserID']; ?>" class="btn btn-sm btn-primary">Edit</a>
-                            <!-- Tombol Delete -->
-                            <a href="deleteUser/<?= $user['UserID']; ?>" class="btn btn-sm btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
             <!-- Table End --
 

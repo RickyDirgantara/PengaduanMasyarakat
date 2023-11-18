@@ -7,11 +7,7 @@ class Index extends BaseController
     public function index(): string
     {
         $data = [];
-
-        // Dapatkan instance objek URI dari helper URL
         $uri = service('uri');
-
-        // Tentukan ID tautan navbar yang sesuai dengan halaman saat ini
         $activeLink = '';
         switch ($uri->getSegment(1)) {
             case 'panduan':
@@ -24,8 +20,6 @@ class Index extends BaseController
                 $activeLink = 'index';
                 break;
         }
-
-        // Tambahkan informasi sesi pengguna
         $data['activeLink'] = $activeLink;
         $data['isLoggedIn'] = session()->get('user_id') ? true : false;
 
