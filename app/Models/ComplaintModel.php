@@ -6,9 +6,12 @@ use CodeIgniter\Model;
 
 class ComplaintModel extends Model
 {
-    protected $table = 'complaints';
+    protected $table = 'Complaints';
     protected $primaryKey = 'ComplaintID';
-    protected $allowedFields = ['JudulPengaduan', 'DeskripsiPengaduan', 'TanggalPengaduan', 'StatusPengaduan', 'PrioritasPengaduan', 'UserID', 'KategoriPengaduan'];
+    protected $allowedFields = ['JudulPengaduan', 'DeskripsiPengaduan', 'TanggalPengaduan', 'StatusPengaduan', 'PrioritasPengaduan', 'UserID'];
 
- 
+    public function getUserComplaints($userID)
+    {
+        return $this->where('UserID', $userID)->findAll();
+    }
 }

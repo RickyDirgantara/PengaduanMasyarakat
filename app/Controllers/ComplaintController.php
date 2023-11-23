@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\NotificationModel;
 use App\Models\ComplaintModel;
 
 class ComplaintController extends BaseController
@@ -67,9 +67,8 @@ class ComplaintController extends BaseController
             'StatusPengaduan' => 'required|in_list[Dalam Proses,Selesai,Ditutup]',
             'PrioritasPengaduan' => 'required|in_list[Tinggi,Sedang,Rendah]',
         ]);
-
+    
         if ($validation->withRequest($this->request)->run()) {
-            // Tangani pembaruan data complaint dari form
             $complaintModel = new ComplaintModel();
             $complaintModel->update($id, [
                 'JudulPengaduan' => $this->request->getPost('JudulPengaduan'),
@@ -77,13 +76,18 @@ class ComplaintController extends BaseController
                 'StatusPengaduan' => $this->request->getPost('StatusPengaduan'),
                 'PrioritasPengaduan' => $this->request->getPost('PrioritasPengaduan'),
             ]);
-
+    
+            // Tambahkan notifikasi untuk pengguna
+            $notificationModel = new NotificationModel();
+            $notificationModel->addNotification(session()->get('user_id'), 'Status laporan diubah.');
+    
+            // Redirect ke halaman complaints setelah update
             return redirect()->to('complaints')->with('success', 'Complaint berhasil diperbarui.');
         } else {
-            // Validasi gagal, kembalikan dengan pesan kesalahan
             return redirect()->to("admin/edit/$id")->with('error', $validation->getErrors());
         }
     }
+    
 
     public function delete($id)
     {

@@ -15,6 +15,7 @@ $routes->post('/register', 'AuthController::register');
 $routes->post('/login', 'AuthController::login');
 $routes->get('/logout', 'AuthController::logout');
 $routes->get('/laporan', 'Laporan::index');
+$routes->get('/complaintsUser', 'complaintsUser::index');
 $routes->post('/create', 'Laporan::create');
 
 # akses operator dan admin
@@ -37,6 +38,6 @@ $routes->post('/storeFollowUps', 'FollowUpController::store');
 $routes->get('/followUps', 'FollowUpController::index');
 
 # login admin dan operator
-$routes->get('/login', 'AuthAdmin::index');
+$routes->get('/loginAdmin', 'AuthAdmin::index');
 $routes->post('/loginAdmin', 'AuthAdmin::login');
 $routes->get('/logoutAdmin', 'AuthAdmin::logout');

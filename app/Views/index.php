@@ -79,32 +79,17 @@
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">The Best IT Solution With 10 Years of Experience</h1>
-                    </div>
-                    <p class="mb-4">Selamat datang di "Masyarakat Peduli Online," platform yang didedikasikan untuk memberdayakan masyarakat dalam menyuarakan permasalahan dan aspirasi mereka. Kami adalah sebuah tim yang berkomitmen untuk menciptakan perubahan positif dalam pelayanan publik dan meningkatkan kualitas hidup masyarakat.</p>
-                    <div class="row g-0 mb-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Transparansi: Kami berkomitmen untuk menjalani segala aktivitas kami dengan transparan dan jujur.</h6>
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Partisipasi: Kami percaya bahwa setiap orang memiliki hak untuk berpartisipasi dalam pembuatan keputusan yang memengaruhi mereka.</h6>
-                        </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Kualitas: Kami berupaya memberikan layanan berkualitas tinggi dan solusi yang efektif untuk setiap laporan yang kami terima.</h6>
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Kemitraan: Kami bekerja sama dengan pemerintah, lembaga swadaya masyarakat, dan pihak-pihak terkait lainnya untuk mencapai tujuan bersama.</h6>
-                        </div>
-                    </div>
+             
                     <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 70px; height: 70px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">jangan ragu untuk menghubungi kami melalui kontak kami atau melalui formulir pengaduan.</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                            <h4 class="text-primary mb-0">+62 345 6789</h4>
                         </div>
                     </div>
-                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Buat Laporan Sekarang</a>
+                    <a href="/laporan" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Buat Laporan Sekarang</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -127,7 +112,7 @@
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid w-100" class="img-fluid" style="max-width: 100%; height: auto;" src="img/team-1.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -137,14 +122,14 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Full Name</h4>
-                            <p class="text-uppercase m-0">Designation</p>
+                            <p class="text-uppercase m-0">Front End</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -154,7 +139,7 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Full Name</h4>
-                            <p class="text-uppercase m-0">Designation</p>
+                            <p class="text-uppercase m-0">Back End</p>
                         </div>
                     </div>
                 </div>
@@ -171,7 +156,7 @@
                         </div>
                         <div class="text-center py-4">
                             <h4 class="text-primary">Full Name</h4>
-                            <p class="text-uppercase m-0">Designation</p>
+                            <p class="text-uppercase m-0">Database Designer</p>
                         </div>
                     </div>
                 </div>
@@ -274,6 +259,11 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <?php if(session()->getFlashdata('error')): ?>
+    <script>
+        alert('<?= session()->getFlashdata('error') ?>');
+    </script>
+<?php endif; ?>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

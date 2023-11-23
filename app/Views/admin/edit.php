@@ -41,7 +41,6 @@
         <!-- Sidebar End -->
 
         <div class="content">
-
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Form Edit Complaints</h6>

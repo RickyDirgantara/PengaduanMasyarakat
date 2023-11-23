@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\NotificationModel;
 class Panduan extends BaseController
 {
     public function index(): string
     {
+        $notificationModel = new NotificationModel();
+        $data['notifications'] = $notificationModel->getNotifications(session()->get('user_id'));
+
         $data = [];
 
 

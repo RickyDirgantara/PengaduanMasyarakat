@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Pengaduan Masyarakat</title>
+    <title>Startup - Startup Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -38,114 +38,33 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar & Carousel Start -->
+
+    <!-- Navbar Start -->
     <?= $this->include('layouts/navbar') ?>
-    <!-- End -->
+    <!-- Navbar End -->
 
 
-    <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">Berikut adalah beberapa fungsi umum dari portal layanan Sobat Sambat</h1>
+
+    <!-- Testimonial Start -->
+    <div class="container py-5">
+    <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+        <h1 class="mb-0">Cek status laporan anda disini</h1>
+    </div>
+    <?php foreach ($complaints as $complaint) : ?>
+        <div class="testimonial-item bg-light my-4">
+            <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                <div class="ps-4">
+                    <h4 class="text-primary mb-1"><?= $complaint['JudulPengaduan']; ?></h4>
+                    <small class="text-uppercase"><?= $complaint['StatusPengaduan']; ?></small>
+                </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                        <i class="bi bi-emoji-frown text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Pengumpulan Keluhan</h4>
-                        <p class="m-0">Masyarakat dapat mengajukan keluhan atau laporan melalui formulir online yang disediakan oleh portal. Informasi yang diperlukan untuk keluhan dapat bervariasi tergantung pada tujuan portal tersebut.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-chart-pie text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Pelacakan Status Pengaduan</h4>
-                        <p class="m-0">Sistem ini umumnya menyediakan fitur pelacakan status sehingga pengguna dapat melihat kemajuan penanganan pengaduan mereka. Ini memberikan transparansi dan memberikan keyakinan kepada masyarakat bahwa pengaduannya sedang ditangani.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="bi bi-clipboard-data text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Pengelolaan dan Analisis Data</h4>
-                        <p class="m-0">Pihak berwenang atau organisasi yang bertanggung jawab dapat menggunakan portal ini untuk mengelola dan menganalisis data pengaduan secara efisien. Ini membantu mereka memahami tren, menilai kinerja, dan merancang strategi perbaikan.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                        <i class="bi bi-chat-left-dots text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Umpan Balik</h4>
-                        <p class="m-0">Setelah pengaduan selesai ditangani, sistem ini biasanya memberikan umpan balik kepada pengadu, memberi tahu mereka tentang tindakan yang telah diambil atau solusi yang diterapkan.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="bi bi-info-circle text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Pemberitahuan dan Komunikasi</h4>
-                        <p class="m-0">Portal ini sering kali menyediakan sistem pemberitahuan untuk memberi tahu pengadu tentang perkembangan terkait pengaduannya. Komunikasi yang efektif membantu membangun kepercayaan dan memberikan informasi yang diperlukan.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                        <i class="fa fa-shield-alt text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Keamanan dan Privasi</h4>
-                        <p class="m-0">Portal pengaduan masyarakat harus menjaga keamanan dan privasi informasi yang dikirimkan oleh pengguna. Ini melibatkan implementasi langkah-langkah keamanan teknis dan kebijakan privasi yang ketat.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-               
-                    
-                    <img class="img-fluid" src="img/cobers.jpg" alt="">
-                  
-              
+            <div class="pt-4 pb-5 px-5">
+                <?= $complaint['DeskripsiPengaduan']; ?>
             </div>
         </div>
-    </div>
-    <!-- Service End -->
+    <?php endforeach; ?>
+</div>
 
-
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
     
 
     <!-- Footer Start -->
