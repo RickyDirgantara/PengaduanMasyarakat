@@ -39,7 +39,7 @@ class FollowUpController extends BaseController
                 'ComplaintID' => $this->request->getPost('ComplaintID'),
             ]);
 
-            return redirect()->to('admin/FollowUps')->with('success', 'Tindak lanjut berhasil dibuat.');
+            return redirect()->to('followUps')->with('success', 'Tindak lanjut berhasil dibuat.');
         } else {
             // Validasi gagal, kembalikan dengan pesan kesalahan
             return redirect()->to("admin/{$this->request->getPost('ComplaintID')}")->with('error', $validation->getErrors());

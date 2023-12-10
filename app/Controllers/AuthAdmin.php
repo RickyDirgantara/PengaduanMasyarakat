@@ -26,6 +26,7 @@ class AuthAdmin extends Controller
             session()->set('isLoggedIn', true);
             session()->set('role', $user['Role']);
             session()->set('user_nama', $user['Nama']);
+            session()->set('admin_id', $user['AdminID']);
 
             // Alihkan pengguna ke dashboard
             return redirect()->to('/dashboard');

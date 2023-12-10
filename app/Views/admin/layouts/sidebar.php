@@ -39,6 +39,8 @@
         <a href="/followUps" class="nav-item nav-link <?= (service('uri')->getSegment(1) == 'followUps') ? 'active' : ''; ?>">
             <i class="fa fa-keyboard me-2"></i>Follow-Ups
         </a>
+        <a href="chatAdmin" class="nav-item nav-link <?= (service('uri')->getSegment(1) == 'chatAdmin') ? 'active' : ''; ?>">
+    <i class="fa fa-comment me-2"></i>Chat Admin</a>
     </div>
 </nav>
 </div>

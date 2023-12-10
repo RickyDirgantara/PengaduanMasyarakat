@@ -8,7 +8,7 @@ class AuthModel extends Model
 {
     protected $table = 'Admin'; 
     protected $primaryKey = 'AdminID';
-    protected $allowedFields = ['Nama', 'AlamatEmail', 'KataSandi', 'StatusAktif'];
+    protected $allowedFields = ['Nama', 'AlamatEmail', 'KataSandi', 'StatusAktif', 'Role'];
 
     public function getAdmin($email)
     {

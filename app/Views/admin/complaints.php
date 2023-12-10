@@ -89,8 +89,7 @@
         </tbody>
     </table>
 </div>
-            <!-- Table End --
-
+    
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

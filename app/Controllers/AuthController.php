@@ -32,7 +32,6 @@ class AuthController extends Controller
                 $user = $userModel->where('AlamatEmail', $this->request->getPost('AlamatEmail'))->first();
     
                 if ($user && password_verify($this->request->getPost('KataSandi'), $user['KataSandi'])) {
-
                     session()->set('user_id', $user['UserID']);
                     session()->set('user_nama', $user['Nama']);
           

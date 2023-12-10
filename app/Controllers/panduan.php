@@ -11,7 +11,6 @@ class Panduan extends BaseController
 
         $data = [];
 
-
         $uri = service('uri');
 
         $activeLink = '';

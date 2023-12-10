@@ -17,9 +17,18 @@ $routes->get('/logout', 'AuthController::logout');
 $routes->get('/laporan', 'Laporan::index');
 $routes->get('/complaintsUser', 'complaintsUser::index');
 $routes->post('/create', 'Laporan::create');
+$routes->get('chatsUser/(:num)', 'ChatController::viewChat/$1');
+$routes->get('chatsUser', 'ChatController::viewChat');
+$routes->get('chatAdmin', 'AdminChat::viewAdminUserChat');
+$routes->get('chatAdmin/(:num)', 'AdminChat::viewAdminUserChat/$1');
+$routes->get('chats/(:num)', 'AdminChat::AdminUserChat/$1');
+$routes->get('chatLists', 'ChatController::chatLists');
+$routes->post('sendUser/(:num)', 'ChatController::sendMessage/$1');
+$routes->post('sendUser/', 'ChatController::sendMessage');
 
 # akses operator dan admin
 $routes->get('dashboard', 'Dashboard::index');
+$routes->post('send/(:num)', 'AdminChat::sendAdminUserMessage/$1');
 
 # hanya admin yang bisa mengedit user
 $routes->get('editUser/(:num)', 'Dashboard::editUser/$1');

@@ -10,7 +10,6 @@ class Laporan extends BaseController
 
         // Dapatkan instance objek URI dari helper URL
         $uri = service('uri');
-
         // Tentukan ID tautan navbar yang sesuai dengan halaman saat ini
         $activeLink = '';
         switch ($uri->getSegment(1)) {

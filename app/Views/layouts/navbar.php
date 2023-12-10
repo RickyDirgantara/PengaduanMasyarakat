@@ -11,6 +11,7 @@
             <a href="/" id="home" class="nav-item nav-link <?= ($activeLink == '/') ? 'active' : ''; ?>">Home</a>
             <a href="/panduan" id="panduan" class="nav-item nav-link <?= ($activeLink == 'panduan') ? 'active' : ''; ?>">Panduan</a>
             <a href="/laporan" id="laporan" class="nav-item nav-link <?= ($activeLink == 'laporan') ? 'active' : ''; ?>">Buat Laporan</a>
+
         </div>             
         <?php if (session()->get('user_id')) : ?>
     <!-- Tampilkan informasi pengguna jika sedang login -->
@@ -19,11 +20,11 @@
         <div class="dropdown-menu m-0">
             <a href="/complaintsUser" class="dropdown-item">
                 Status Laporan
-                <?php if (!empty($notifications)) : ?>
-    <span>!</span>
-<?php endif; ?>
             </a>
-            <a href="/logout" class="dropdown-item">Logout</a>
+          
+            <a href="/chatLists" class="dropdown-item">Pesan</a>
+       
+        <a href="/logout" class="dropdown-item">Logout</a>
         </div>
     </div>    
         <?php else : ?>
@@ -151,21 +152,4 @@
 
 
 
-    <script>
-    // Contoh: Tambahkan notifikasi dinamis saat dokumen dimuat
-    document.addEventListener("DOMContentLoaded", function() {
-        // Gantilah ini dengan logika sesuai dengan proyek Anda
-        var hasUnreadNotifications = <?php echo json_encode($hasUnreadNotifications); ?>;
 
-        if (hasUnreadNotifications) {
-            // Tambahkan elemen notifikasi ke elemen dropdown
-            var notificationBadge = document.createElement("span");
-            notificationBadge.className = "badge bg-danger";
-            notificationBadge.textContent = "New";
-
-            // Gantilah dengan ID atau kelas yang sesuai dengan proyek Anda
-            var statusLaporanLink = document.querySelector(".dropdown-item[href='/complaintsUser']");
-            statusLaporanLink.appendChild(notificationBadge);
-        }
-    });
-</script>
