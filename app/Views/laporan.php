@@ -61,9 +61,9 @@
                         <div class="col-12">
                                     <select name="KategoriPengaduan" class="form-select bg-light border-0" style="height: 55px;">
                                         <option selected>Pilih Kategori Laporan Anda</option>
-                                        <option value="1">Kategori 1</option>
-                                        <option value="2">Kategori 2</option>
-                                        <option value="3">Kategori 3</option>
+                                        <option value="Kekerasan">Kekerasan</option>
+                                        <option value="Kesehatan Mental">Kesehatan Mental</option>
+                                        <option value="Kesehatan Reproduksi">Kesehatan Reproduksi</option>
                                     </select>
                                 </div>
                         <div class="col-12">
