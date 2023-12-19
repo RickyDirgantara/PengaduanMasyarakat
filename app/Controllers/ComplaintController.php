@@ -89,12 +89,12 @@ class ComplaintController extends BaseController
     }
     
 
-    public function delete($id)
-    {
-        // Hapus complaint dengan ID tertentu
-        $complaintModel = new ComplaintModel();
-        $complaintModel->delete($id);
-
-        return redirect()->to('complaints')->with('success', 'Complaint berhasil dihapus.');
-    }
+   public function delete($id)
+{
+    $complaintModel = new ComplaintModel();
+    $complaintModel->db->table('followups')->where('ComplaintID', $id)->delete();
+    $complaintModel->db->table('chat_messages')->where('complaint_id', $id)->delete();
+    $complaintModel->delete($id);
+    return redirect()->to('complaints')->with('success', 'Complaint berhasil dihapus.');
+}
 }
